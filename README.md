@@ -35,7 +35,7 @@ $\quad w_{ij} = \exp(-\Vert p_i - p_j \Vert^2)$
 
 To capture higher-order structure, we use a recursive formulation:
 
-$d_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j w_{ij}$, 
+$\tilde{d}_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j w_{ij}$, 
 $\alpha = 0.5$, 
 $\varepsilon = 10^{-6}$
 

@@ -26,7 +26,7 @@ I proposes a lightweight approach to enhance Graph Neural Networks (GNNs) for po
 
 ### Local Centrality Computation
 
-For a point cloud \(P \in \mathbb{R}^{N \times 3}\), the weighted local degree centrality is:
+For a point cloud $P \in \mathbb{R}^{N \times 3}$, the weighted local degree centrality is:
 
 \[
 d_i = \sum_{j \in N_r(i)} w_{ij}, \quad w_{ij} = \exp(-\Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2)

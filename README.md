@@ -52,7 +52,7 @@ where $s_i$ is the normalized centrality score.
 
 A learnable combination of max and mean pooling:
 
-$x'\_i = w_1 \cdot \max_{j \in N_r(i)} e_{ij} + w_2 \cdot \operatorname{mean}_{j \in N_r(i)} e_{ij}$
+$x'\_i = w_1 \cdot \max_{j \in N_r(i)} e_{ij} + w_2 \cdot \mean_{j \in N_r(i)} e_{ij}$
 
 where $w_1, w_2$ are normalized via softmax.
 

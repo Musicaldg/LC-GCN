@@ -51,7 +51,7 @@ where $s_i$ is the normalized centrality score.
 
 A learnable combination of max and mean pooling:
 
-$\mathbf{x}'_i = w_1 \cdot \max_{j \in N_r(i)} e_{ij} + w_2 \cdot \operatorname{mean}_{j \in N_r(i)} e_{ij}$
+$x'_i = w_1 \cdot \max_{j \in N_r(i)} e_{ij} + w_2 \cdot \operatorname{mean}_{j \in N_r(i)} e_{ij}$
 
 where $w_1, w_2$ are normalized via softmax.
 
@@ -63,7 +63,7 @@ where $w_1, w_2$ are normalized via softmax.
 |--------|--------|----------|------------|
 | PointNet | 89.2 | 86.2 | 3.5 |
 | PointNet++ | 90.7 | 87.8 | 1.7 |
-| **Local-Centrality GCN (Ours)** | **91.2** | **84.9** | **0.27** |
+| **Local-Centrality GCN (Ours)** | **91.2** | **87.9** | **0.27** |
 
 ### Ablation Study: Centrality Integration Methods
 

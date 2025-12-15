@@ -34,4 +34,54 @@ et al., 2017b) introduced multi-scale grouping and sampling strategies, enabling
 learning. The field further evolved with graph-based approaches, notably DGCNN (Wang et al.,
 2019), which explicitly modeled point relationships through dynamic graph construction.
 
+#### 1.2.2 GNN Over-smoothing
+The over-smoothing phenomenon in GNNs has emerged as a critical challenge, particularly in deep
+architectures. Theoretical analyses (Li et al., 2018; Chen et al., 2020) have revealed that repeated
+message passing causes node features to converge to similar values, effectively losing discriminative
+information. This issue becomes more pronounced in point cloud processing due to the geometric
+nature of the data and the importance of preserving local structural information.
+Recent theoretical developments (Zhou et al., 2020) have shifted focus from message propagation to
+feature transformation mechanisms as the primary source of over-smoothing. This insight suggests
+that addressing feature transformation strategies may be more crucial than modifying message passing
+schemes.
 
+#### 1.2.3 Network Centrality in Graph Learning
+Network centrality measures have long been recognized as powerful tools for understanding graph
+structures (Borgatti, 2005). While traditional centrality metrics focus on global network properties,
+recent research has explored efficient local variants (You et al., 2020), making them more applicable
+to deep learning contexts. The adaptation of centrality measures to GNNs has shown promise in
+tasks requiring structural understanding, though their application to point cloud processing remains
+under-explored.
+
+### 1.3 Contributions
+Our work advances the field of point cloud processing through several key contributions:
+First, we propose an efficient local centrality computation mechanism that captures structural information in point clouds without requiring expensive global computations. This approach enables
+the integration of structural features while maintaining computational efficiency, addressing a key
+challenge in geometric deep learning.
+Second, we develop a novel feature integration strategy that effectively combines centrality information with geometric features through an adaptive weighting mechanism. This design helps prevent
+feature degradation while enhancing the model’s ability to capture local structural patterns.
+Finally, we demonstrate that our lightweight architecture achieves competitive performance (89.8%
+accuracy) with significantly fewer parameters (0.27M) compared to standard architectures like PointNet (3.5M parameters). These results show that carefully designed structural feature learning can
+maintain high performance while reducing model complexity.
+
+## 2 Method
+### 2.1 Overview
+We propose a centrality-enhanced architecture that integrates local structural properties into the
+dynamic graph convolution framework for point cloud classification. Our approach is motivated
+by the observation that structural importance information can effectively complement geometric
+features while preventing over-smoothing. The architecture, illustrated in Figure 1, consists of three
+key components that work in concert to achieve this goal: (1) an efficient local centrality module
+that computes structural importance scores based on both geometric relationships and feature space
+similarities, (2) a novel structural edge convolution layer that effectively combines the computed
+centrality information with geometric features, and (3) a multi-scale feature extraction pathway with
+residual connections.
+The architecture progressively processes point clouds through feature extraction (N×64) and multiple
+edge convolution layers with increasing receptive fields (r=0.1, 0.2, 0.4). This hierarchical design
+enables the model to capture multi-scale structural patterns while maintaining computational efficiency. The residual connections help prevent feature degradation during deep propagation, while
+the increasing receptive fields allow the model to gradually expand its structural awareness.
+This design enables our model to:
+
+* Capture multi-scale structural patterns through hierarchical feature learning
+* Maintain geometric fidelity while incorporating structural importance
+* Prevent over-smoothing through adaptive feature aggregation
+* Scale efficiently to large point clouds through localized computations

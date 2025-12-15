@@ -36,14 +36,14 @@ $\quad w_{ij} = \exp(-\Vert p_i - p_j \Vert^2)$
 To capture higher-order structure, we use a recursive formulation:
 
 
-$\tilde{d}_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j \w_{ij}$, $\alpha = 0.5$, $\varepsilon = 10^{-6}$
+$\tilde{d}_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j w_{ij}$, $\alpha = 0.5$, $\varepsilon = 10^{-6}$
 
 
 ### Structural Edge Features
 
 Edge features are computed with centrality weighting:
 
-$ e_{ij} = MLP\big(x_i \Vert (x_j - x_i) \Vert \Vert p_i - p_j \Vert^2\big) \cdot s_i$ 
+$e_{ij} = MLP\big(x_i \Vert (x_j - x_i) \Vert \Vert p_i - p_j \Vert^2\big) \cdot s_i$ 
 
 where $s_i$ is the normalized centrality score.
 

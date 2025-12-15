@@ -1,6 +1,6 @@
 # Exploring the Role of Local Centrality in Graph Neural Networks for Point Cloud Classification
 
-_This is my final thesis project in the advanced course "Pattern Recognition and Machine Learning"_
+_This is my final thesis project in the advanced course "Pattern Recognition and Machine Learning" in Fudan University_
 
 ## Overview
 I proposes a lightweight approach to enhance Graph Neural Networks (GNNs) for point cloud classification by integrating efficient local centrality measures. The method achieves **91.2% accuracy on ModelNet40 with only 0.27M parameters**, demonstrating that carefully designed structural feature learning can maintain competitive performance while significantly reducing model complexity.

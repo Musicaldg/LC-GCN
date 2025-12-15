@@ -9,7 +9,7 @@ I proposes a lightweight approach to enhance Graph Neural Networks (GNNs) for po
 
 1. **Efficient Local Centrality Computation**
    - Computes weighted local degree centrality within radius-based neighborhoods
-   - Avoids expensive global computations with \(\mathcal{O}(N \log N)\) complexity
+   - Avoids expensive global computations with $O(NlogN)$ complexity
    - Captures higher-order structural information through recursive formulation
 
 2. **Structural Edge Convolution Layer**

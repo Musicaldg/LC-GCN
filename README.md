@@ -28,26 +28,23 @@ I proposes a lightweight approach to enhance Graph Neural Networks (GNNs) for po
 
 For a point cloud $P \in \mathbb{R}^{N \times 3}$, the weighted local degree centrality is:
 
-\[
-d_i = \sum_{j \in N_r(i)} w_{ij}, \quad w_{ij} = \exp(-\Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2)
-\tag{1}
-\]
+
+$ d_i = \sum_{j \in N_r(i)} w_{ij}, \quad w_{ij} = \exp(-\Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2) \tag{1} $ 
+
 
 To capture higher-order structure, we use a recursive formulation:
 
-\[
-\tilde{d}_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j \, w_{ij}, \quad \alpha = 0.5, \varepsilon = 10^{-6}
+
+$ \tilde{d}_i = d_i + \frac{\alpha}{d_i + \varepsilon} \sum_{j \in N_r(i)} d_j \, w_{ij}, \quad \alpha = 0.5, \varepsilon = 10^{-6} $
 \tag{2}
-\]
+
 
 ### Structural Edge Features
 
 Edge features are computed with centrality weighting:
 
-\[
-e_{ij} = \mathrm{MLP}\big([\mathbf{x}_i \Vert (\mathbf{x}_j - \mathbf{x}_i) \Vert \Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2]\big) \cdot s_i
-\tag{3}
-\]
+$ e_{ij} = \mathrm{MLP}\big([\mathbf{x}_i \Vert (\mathbf{x}_j - \mathbf{x}_i) \Vert \Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2]\big) \cdot s_i
+\tag{3}$ 
 
 where \(s_i\) is the normalized centrality score.
 

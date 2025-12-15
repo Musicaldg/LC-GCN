@@ -79,17 +79,19 @@ where $w_1, w_2$ are normalized via softmax.
 ## Visualization Analysis
 
 ### Architecture Overview
-*Insert Figure 1: Overall architecture diagram showing local centrality module, multi-scale edge convolution layers, and residual connections.*
+![](1.png)
+_Figure 1: Overview of our centrality-enhanced architecture for point cloud classification_
+
+![](2.png)
+_Figure 2: Detailed structure of the proposed structural edge convolution layer, showing the integration of geometric features with centrality-based attention and adaptive feature aggregation mechanisms_
 
 ### Structural Edge Convolution Layer
-*Insert Figure 2: Detailed structure showing feature computation, centrality attention, and adaptive aggregation.*
+![](3.png)
+_Figure 3: Point cloud connection graph after each convolution layer_
 
 ### Connection Graph Evolution
-*Insert Figure 3: Point cloud connection graphs across three layers, demonstrating transition from spatial to semantic neighborhood.*
+![](4.png)
+_Figure 4: Single point connection graph after centrality-enhanced architecture_
 
-### Feature Space Analysis (t-SNE)
-*Insert Figure 5: t-SNE visualizations per layer - showing progressive class separation and reduced over-smoothing.*
-
-*Insert Figure 6: t-SNE of fused multi-scale features - demonstrating effective multi-scale integration.*
 
 
